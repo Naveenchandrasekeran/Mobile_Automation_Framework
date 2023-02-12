@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="4" time="152.889" timestamp="2023-02-10T12:34:19.938925" hostname="IABLR-LT345.domain.name"><testcase classname="src.spec.Android.Jobseeker_Login_Test.Test_Jobseeker_Login" name="test_VerifyGoogleLogin" time="18.066" /><testcase classname="src.spec.Android.Jobseeker_Login_Test.Test_Jobseeker_Login" name="test_VerifyfacebookLogin" time="58.035"><failure message="AssertionError">self = &lt;[RecursionError('maximum recursion depth exceeded') raised in repr()] Test_Jobseeker_Login object at 0x107523880&gt;
+locator = ('id', 'com.impactanalytics.employdnew:id/email-password'), expected = True, n = 1, kwargs = {}
+wait = &lt;selenium.webdriver.support.wait.WebDriverWait (session="bf9f27dc-7ddf-4eb2-994f-e9d12fbcb9cc")&gt;
+x = &lt;ConfigData.Baseclass.CustomCall object at 0x10752dac0&gt;
+
+    def is_displayed(self, locator, expected=True, n=3, **kwargs):
+        wait = WebDriverWait(self.driver, 20)
+    
+        x = iter(CustomCall())
+        while n &gt; 1:
+            try:
+                if len(kwargs) == 0:
+&gt;                   wait.until(EC.visibility_of_element_located(locator))
+
+ConfigData/Baseclass.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;selenium.webdriver.support.wait.WebDriverWait (session="bf9f27dc-7ddf-4eb2-994f-e9d12fbcb9cc")&gt;
+method = &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x10752db20&gt;, message = ''
+
+    def until(self, method, message=''):
+        """Calls the method provided with the driver as an argument until the \
+        return value is not False."""
+        screen = None
+        stacktrace = None
+    
+        end_time = time.time() + self._timeout
+        while True:
+            try:
+                value = method(self._driver)
+                if value:
+                    return value
+            except self._ignored_exceptions as exc:
+                screen = getattr(exc, 'screen', None)
+                stacktrace = getattr(exc, 'stacktrace', None)
+            time.sleep(self._poll)
+            if time.time() &gt; end_time:
+                break
+&gt;       raise TimeoutException(message, screen, stacktrace)
+E       selenium.common.exceptions.TimeoutException: Message:
+
+../../Documents/python-appium-framework-master 2/venv/lib/python3.9/site-packages/selenium/webdriver/support/wait.py:80: TimeoutException
+
+During handling of the above exception, another exception occurred:
+
+self = &lt;[RecursionError('maximum recursion depth exceeded') raised in repr()] Test_Jobseeker_Login object at 0x107523880&gt;
+
+    @pytest.mark.smoke
+    @pytest.mark.regression
+    def test_VerifyfacebookLogin(self):
+         self.select_Jobseeker()
+         self.select_Continuewithemail()
+&gt;        self.enter_Login_Credentials(TestData_Cofig.jobseeker_logi_email, TestData_Cofig.jobseeke_password)
+
+src/spec/Android/Jobseeker_Login_Test.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+Pages/Android/login_screen.py:27: in enter_Login_Credentials
+    App.is_displayed(self,self.jobseeker_password_input)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[RecursionError('maximum recursion depth exceeded') raised in repr()] Test_Jobseeker_Login object at 0x107523880&gt;
+locator = ('id', 'com.impactanalytics.employdnew:id/email-password'), expected = True, n = 1, kwargs = {}
+wait = &lt;selenium.webdriver.support.wait.WebDriverWait (session="bf9f27dc-7ddf-4eb2-994f-e9d12fbcb9cc")&gt;
+x = &lt;ConfigData.Baseclass.CustomCall object at 0x10752dac0&gt;
+
+    def is_displayed(self, locator, expected=True, n=3, **kwargs):
+        wait = WebDriverWait(self.driver, 20)
+    
+        x = iter(CustomCall())
+        while n &gt; 1:
+            try:
+                if len(kwargs) == 0:
+                    wait.until(EC.visibility_of_element_located(locator))
+                    assert self.driver.find_element(*locator).is_displayed() == expected
+                else:
+                    assert self.driver.find_elements(*locator)[kwargs['index']].is_displayed() == expected
+                break
+            except Exception as e:
+                self.logger.error(f'is_displayed failed attempt {next(x)}- {locator}')
+                time.sleep(0.5)
+                n -= 1
+&gt;               if n == 1: assert False == expected
+E               AssertionError
+
+ConfigData/Baseclass.py:65: AssertionError</failure></testcase><testcase classname="src.spec.Android.Jobseeker_Login_Test2.Test_Jobseeker_Login" name="test_VerifyfacebookLogins" time="58.760"><failure message="AssertionError">self = &lt;[RecursionError('maximum recursion depth exceeded') raised in repr()] Test_Jobseeker_Login object at 0x1075a3ca0&gt;
+locator = ('id', 'com.impactanalytics.employdnew:id/email-password'), expected = True, n = 1, kwargs = {}
+wait = &lt;selenium.webdriver.support.wait.WebDriverWait (session="b5e717de-5bea-41bd-b64a-ff6830809206")&gt;
+x = &lt;ConfigData.Baseclass.CustomCall object at 0x1075a30d0&gt;
+
+    def is_displayed(self, locator, expected=True, n=3, **kwargs):
+        wait = WebDriverWait(self.driver, 20)
+    
+        x = iter(CustomCall())
+        while n &gt; 1:
+            try:
+                if len(kwargs) == 0:
+&gt;                   wait.until(EC.visibility_of_element_located(locator))
+
+ConfigData/Baseclass.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;selenium.webdriver.support.wait.WebDriverWait (session="b5e717de-5bea-41bd-b64a-ff6830809206")&gt;
+method = &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x1075a3640&gt;, message = ''
+
+    def until(self, method, message=''):
+        """Calls the method provided with the driver as an argument until the \
+        return value is not False."""
+        screen = None
+        stacktrace = None
+    
+        end_time = time.time() + self._timeout
+        while True:
+            try:
+                value = method(self._driver)
+                if value:
+                    return value
+            except self._ignored_exceptions as exc:
+                screen = getattr(exc, 'screen', None)
+                stacktrace = getattr(exc, 'stacktrace', None)
+            time.sleep(self._poll)
+            if time.time() &gt; end_time:
+                break
+&gt;       raise TimeoutException(message, screen, stacktrace)
+E       selenium.common.exceptions.TimeoutException: Message:
+
+../../Documents/python-appium-framework-master 2/venv/lib/python3.9/site-packages/selenium/webdriver/support/wait.py:80: TimeoutException
+
+During handling of the above exception, another exception occurred:
+
+self = &lt;[RecursionError('maximum recursion depth exceeded') raised in repr()] Test_Jobseeker_Login object at 0x1075a3ca0&gt;
+
+    @pytest.mark.regression
+    def test_VerifyfacebookLogins(self):
+         self.select_Jobseeker()
+         self.select_Continuewithemail()
+&gt;        self.enter_Login_Credentials(TestData_Cofig.jobseeker_logi_email, TestData_Cofig.jobseeke_password)
+
+src/spec/Android/Jobseeker_Login_Test2.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+Pages/Android/login_screen.py:27: in enter_Login_Credentials
+    App.is_displayed(self,self.jobseeker_password_input)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[RecursionError('maximum recursion depth exceeded') raised in repr()] Test_Jobseeker_Login object at 0x1075a3ca0&gt;
+locator = ('id', 'com.impactanalytics.employdnew:id/email-password'), expected = True, n = 1, kwargs = {}
+wait = &lt;selenium.webdriver.support.wait.WebDriverWait (session="b5e717de-5bea-41bd-b64a-ff6830809206")&gt;
+x = &lt;ConfigData.Baseclass.CustomCall object at 0x1075a30d0&gt;
+
+    def is_displayed(self, locator, expected=True, n=3, **kwargs):
+        wait = WebDriverWait(self.driver, 20)
+    
+        x = iter(CustomCall())
+        while n &gt; 1:
+            try:
+                if len(kwargs) == 0:
+                    wait.until(EC.visibility_of_element_located(locator))
+                    assert self.driver.find_element(*locator).is_displayed() == expected
+                else:
+                    assert self.driver.find_elements(*locator)[kwargs['index']].is_displayed() == expected
+                break
+            except Exception as e:
+                self.logger.error(f'is_displayed failed attempt {next(x)}- {locator}')
+                time.sleep(0.5)
+                n -= 1
+&gt;               if n == 1: assert False == expected
+E               AssertionError
+
+ConfigData/Baseclass.py:65: AssertionError</failure></testcase><testcase classname="src.spec.Android.Jobseeker_Login_Test2.Test_Jobseeker_Login" name="test_VerifygmailLogins" time="17.868" /></testsuite></testsuites>
